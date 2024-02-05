@@ -40,7 +40,10 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        name = self.txt_nombre.get()
+        age = self.txt_edad.get()
+        show_text = "Usted se llama " + name + " y su edad es " + age + " años"
+        alert("nombre", show_text)
 
         
     
