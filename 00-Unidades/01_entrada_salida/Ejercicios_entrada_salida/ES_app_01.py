@@ -7,6 +7,7 @@ import customtkinter
 '''
 nombre: Jeronimo
 apellido: Vilar
+tutor: Mauro
 ---
 Ejercicio: entrada_salida_01
 ---
