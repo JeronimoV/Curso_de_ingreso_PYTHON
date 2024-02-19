@@ -38,7 +38,18 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        mes_seleccionado = self.combobox_mes.get()
+        mensaje = ""
+
+        match mes_seleccionado:
+            case "Febrero" :
+                mensaje = "Tiene 28 dias"
+            case "Abril" | "Junio" | "Septiembre" | "Noviembre":
+                mensaje = "Tiene 30 dias"
+            case "Enero"| "Marzo"| "Mayo"| "Julio"| "Agosto"| "Octubre" | "Diciembre" :
+                mensaje = "Tienen 31 dias"
+        
+        alert("Mensaje", mensaje)
     
 if __name__ == "__main__":
     app = App()

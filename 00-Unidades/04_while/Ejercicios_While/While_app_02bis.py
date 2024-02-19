@@ -29,7 +29,11 @@ class App(customtkinter.CTk):
         
     
     def btn_mostrar_iteracion_on_click(self):
-        pass
+        variable_de_control = 2
+
+        while variable_de_control < 11:
+            alert("Mensaje", variable_de_control)
+            variable_de_control += 2
     
     
 if __name__ == "__main__":

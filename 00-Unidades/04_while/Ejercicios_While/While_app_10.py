@@ -37,7 +37,33 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        suma_positivos = 0
+        suma_negativos = 0
+        maximo = 0 
+        minimo = 0 
+        cantidad_ceros = 0
+        cantidad_numeros_negativos = 0
+        cantidad_numeros_positivos = 0
+
+        while True:
+            numero_b = prompt("Numero", "Ingrese un numeros") 
+            if numero_b == None:
+                break
+            if 0 < int(numero_b):
+                suma_positivos += int(numero_b)
+                cantidad_numeros_positivos += 1
+            else:
+                suma_negativos += int(numero_b)
+                cantidad_numeros_negativos += 1
+            if maximo < int(numero_b): 
+                maximo = int(numero_b) 
+            if minimo > int(numero_b): 
+                minimo = int(numero_b)
+            if int(numero_b) == 0:
+                cantidad_ceros += 1
+            
+
+        alert("Ej10", f"Suma de positivos: {suma_positivos}, Suma negativos: {suma_negativos}, Maximo: {maximo}, Minimo: {minimo}, Cantidad de ceros: {cantidad_ceros}, Cantidad numeros negativos: {cantidad_numeros_negativos}, Cantidad numeros positivos: {cantidad_numeros_positivos}")
 
     
 if __name__ == "__main__":

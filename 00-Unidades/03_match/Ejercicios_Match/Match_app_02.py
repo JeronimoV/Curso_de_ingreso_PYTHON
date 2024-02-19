@@ -41,7 +41,18 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        mes_seleccionado = self.combobox_mes.get()
+        mensaje = ""
+
+        match mes_seleccionado :
+            case "Julio" | "Agosto" :
+                mensaje = "Abrigate que hace frio!!!"
+            case "Septiembre" | "Octubre" | "Noviembre" | "Diciembre" | "Enero" :
+                mensaje = "Ya pasamos el frio, ahora calor!"
+            case _:
+                mensaje = "Falta para el invierno..."
+
+        alert("Mensaje", mensaje)
     
     
 if __name__ == "__main__":

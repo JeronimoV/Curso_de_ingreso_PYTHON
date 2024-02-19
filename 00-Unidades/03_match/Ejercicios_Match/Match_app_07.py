@@ -34,7 +34,20 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        hora_seleccionada = self.combobox_destino.get()
+        mensaje = ""
+
+        match hora_seleccionada:
+            case "Bariloche":
+                mensaje = "Oeste"
+            case "Mar del plata":
+                mensaje = "Este"
+            case "Cataratas":
+                mensaje = "Norte"
+            case "Ushuaia":
+                mensaje = "Sur"
+
+        alert("Mensaje", mensaje)
     
     
 if __name__ == "__main__":

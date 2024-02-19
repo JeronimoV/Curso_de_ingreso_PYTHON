@@ -43,8 +43,46 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
-        
+        marca = self.combobox_marca.get()
+        cantidad = int(self.combobox_cantidad.get())
+        cantidad_descuento = 0
+        precio_con_descuento = 0
+
+        if cantidad > 5:
+                alert("Mensaje", "Tienes un descuento del 50%")
+                cantidad_descuento = 50
+        elif cantidad > 4:
+                if marca == "ArgentinaLuz":
+                    alert("Mensaje", "Tienes un descuento del 40%")
+                    cantidad_descuento = 40
+                else:
+                     alert("Mensaje", "Tienes un descuento del 30%")
+                     cantidad_descuento = 30
+        elif cantidad >3:
+                if marca == "ArgentinaLuz" or marca == "FelipeLamparas":
+                     alert("Mensaje", "Tienes un descuento del 25%")
+                     cantidad_descuento = 25
+                else:
+                     alert("Mensaje", "Tienes un descuento del 20%")
+                     cantidad_descuento = 20
+        elif cantidad >2:
+                if marca == "ArgentinaLuz":
+                     alert("Mensaje", "Tienes un descuento del 15%")
+                     cantidad_descuento = 15
+                elif marca == "FelipeLamparas":
+                     alert("Mensaje", "Tienes un descuento del 10%")
+                     cantidad_descuento = 10
+                else:
+                      alert("Mensaje", "Tienes un descuento de 5%")
+                      cantidad_descuento = 5
+
+        precio_con_descuento = (cantidad * 800) - ((cantidad_descuento/100)* (cantidad * 800))
+        if precio_con_descuento > 4000:
+               precio_con_descuento = precio_con_descuento - ((5/100)*precio_con_descuento)
+               alert("Mensaje", f"Tu precio total supero los 4000 mil pesos, tendras un descuento del 5%, tu pago sera de {precio_con_descuento}")
+        else:
+              alert("Mensaje",f"Deberas pagar {precio_con_descuento}")
+              
     
 if __name__ == "__main__":
     app = App()
